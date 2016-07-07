@@ -1,11 +1,12 @@
 #Start Here
-#This test file combines each of the other test files. Uncomment them in order, or you will run into dependency errors.
+#This test file combines each of the other test files. Uncomment them in order, or you will 
+#run into dependency errors.
 
 #1
 require_relative "contestant_test" #once all the tests here pass, uncomment the next line, and so on.
-#
-# #2
-# require_relative "jury_test"
+
+#2
+require_relative "jury_test"
 #
 # #3
 # require_relative "tribe_test"
