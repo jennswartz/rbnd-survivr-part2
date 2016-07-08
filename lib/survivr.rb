@@ -5,24 +5,34 @@ require_relative "jury"
 
 #After your tests pass, uncomment this code below
 #=========================================================
-# # Create an array of twenty hopefuls to compete on the island of Borneo
-# @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
-# @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
-#
-# # Create two new tribes with names
-# @coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
-# @hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
-#
-# # Create a new game of Survivor
-# @borneo = Game.new(@coyopa, @hunapu)
+#Create an array of twenty hopefuls to compete on the island of Borneo
+@contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
+@contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
+
+#Create two new tribes with names
+@coyopa = Tribe.new(name: "Pagong", members: @contestants.shift(10))
+@hunapu = Tribe.new(name: "Tagi", members: @contestants.shift(10))
+
+#Create a new game of Survivor
+@borneo = Game.new(@coyopa, @hunapu)
 #=========================================================
 
 
 #This is where you will write your code for the three phases
 def phase_one
+  8.times do 
+	immunity_challenge_loser = @borneo.immunity_challenge
+	member_voted_off = immunity_challenge_loser.tribal_council
+	puts "#{member_voted_off} has been voted off the island."
+  end
 end
 
 def phase_two
+  3.times do
+    
+    
+  end
+  
 end
 
 def phase_three
