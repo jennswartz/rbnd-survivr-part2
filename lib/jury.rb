@@ -15,10 +15,20 @@ class Jury
 	@members.each do |member|
 	  selection = finalists.sample
 	  votes[selection] += 1
-	  puts "#{member.name} " +  "voted for " + "#{selection}."
+	  puts "#{member.name} voted for #{selection}."
 	  end
 	votes
   end
   
+  def report_votes(votes)
+    votes.each do |finalist, selection|
+      puts "#{finalist.name} " + " received " + "#{selection}" + " vote(s)."
+    end
+  end  
   
+  def announce_winner(votes)
+    winner = votes.max_by { |finalist, selection| selection }.first 
+    puts "#{winner.name} is the winner!" 
+    winner
+  end
 end
