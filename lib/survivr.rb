@@ -20,29 +20,47 @@ require_relative "jury"
 
 #This is where you will write your code for the three phases
 def phase_one
+  puts "Welcome to Survivr!"  
+  sleep(2)
+  puts "Get ready to start Part 1. We have two tribes competing today, the #{@coyopa.name} Tribe and the #{@hunapu.name} Tribe."
+  sleep(2)
   8.times do 
 	losing_tribe = @borneo.immunity_challenge
+	puts "#{losing_tribe} has lost the challenge and will vote someone off the island."
+	sleep(2)
 	member_voted_off = losing_tribe.tribal_council
 	losing_tribe.delete(member_voted_off)
-	puts "#{member_voted_off} has been voted off the island."	
+	puts "Sadly, #{member_voted_off} has been voted off the island."	
+	sleep(2)
   end
 end
 
 def phase_two
+  puts "The tribes have merged, and it is time to start Part 2 of the fabulous game Survivr!"
+  sleep(2)
   3.times do
     immune = @borneo.individual_immunity_challenge
+    puts "Wow! #{immune} has won the challenge and has immunity!"
+    sleep(2)
     member_voted_off = @merge_tribe.tribal_council(immune: immune)
     @merge_tribe.delete(member_voted_off)
-    puts "#{member_voted_off} has been voted off the island."
+    puts "Unfortunately, #{member_voted_off} has been voted off the island."
+    sleep(2)
   end
 end
 
 def phase_three
+  puts "It is time for the last part of the game!"
+  sleep(2)
   7.times do
     immune = @borneo.individual_immunity_challenge
+    puts "#{immune} has won the immunity challenge!"
+    sleep(2)
     member_voted_off = @merge_tribe.tribal_council(immune: immune)
     @merge_tribe.delete(member_voted_off)
     @jury.add_member(member_voted_off)
+    puts "Goodbye, #{member_voted_off}. You have been voted off the island."
+    sleep(2)
   end
 end
 

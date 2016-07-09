@@ -29,5 +29,4 @@ class Game
     immune = @tribes[0].members.sample
     return immune
   end
-  
 end
