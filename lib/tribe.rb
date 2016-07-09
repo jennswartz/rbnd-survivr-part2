@@ -5,7 +5,9 @@ attr_accessor :name, :members
   def initialize(options)
     @name = options[:name]
     @members = options[:members]
-    puts "#{@name} tribe has been created."
+    team = @members.map { |name| "#{name}" }.join(", ")
+    puts "#{@name} tribe has been created with the following team members: #{team}"
+    sleep(1)
   end
   
   def to_s
@@ -14,7 +16,6 @@ attr_accessor :name, :members
   
   def tribal_council(immune={})
     @members.reject { |member| member == immune[:immune] }.sample
-    # I think I need to delete someone here?
   end
   
   def delete(members)

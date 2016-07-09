@@ -12,14 +12,12 @@ class Jury
   def cast_votes(finalists)
 	votes = Hash.new
 	finalists.each { |finalist| votes[finalist] = 0 }
-	puts "It is time for the final vote."
-	sleep(2)
 	@members.each do |member|
 	  selection = finalists.sample
-	  votes[selection] += 1
 	  puts "#{member.name} voted for #{selection}."
 	  sleep(1)
-	  end
+	  votes[selection] += 1
+	end
 	votes
   end
   
