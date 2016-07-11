@@ -17,7 +17,6 @@ class Jury
 	@members.each do |member|
 	  selection = finalists.sample
 	  puts "#{member.name} ".red + "voted for " + "#{selection}.".blue
-	  sleep(1)
 	  votes[selection] += 1
 	end
 	votes
@@ -26,7 +25,6 @@ class Jury
   def report_votes(votes)
     votes.each do |finalist, selection|
       puts "#{finalist.name} ".pink + "received #{selection} vote(s).".yellow
-      sleep(1)
     end
   end  
   

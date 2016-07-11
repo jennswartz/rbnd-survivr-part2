@@ -9,7 +9,6 @@ attr_accessor :name, :members
     team = @members.map { |name| "#{name}" }.join("\n")
     puts "#{@name} ".green + "tribe has been created with the following team members:"
     puts "#{team}".light_blue
-    sleep(3)
   end
   
   def to_s
@@ -17,7 +16,8 @@ attr_accessor :name, :members
   end
   
   def tribal_council(immune={})
-    @members.reject { |member| member == immune[:immune] }.sample
+    vote_off = @members.reject { |member| member == immune[:immune] }.sample
+    @members.delete(vote_off)    
   end
   
   def delete(members)
